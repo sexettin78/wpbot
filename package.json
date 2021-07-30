@@ -1,7 +1,7 @@
 {
   "name": "node-js-getting-started",
   "version": "0.3.0",
-  ...
+  
   "engines": {
     "node": "14.x"
   },
@@ -9,5 +9,5 @@
     "ejs": "^3.1.5",
     "express": "^4.17.1"
   },
-  ...
+  
 }
