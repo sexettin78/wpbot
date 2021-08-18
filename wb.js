@@ -8,7 +8,7 @@ client.on('qr', qr => {
 });
 
 client.on('ready', () => {
-    console.log('Client is ready!');
+    console.log('Bot Etkinleştirildi!');
 });
 
 client.initialize();
@@ -63,11 +63,6 @@ client.on('message', message => {
 });
 
 
-client.on('message', message => {
-	if(message.body === 'Furkan') {
-		client.sendMessage(message.from, 'Efendim');
-	}
-});
 
 
 
@@ -94,21 +89,3 @@ client.on('message', message => {
 
 
 
-// Mention everyone
-client.on('message', async (msg) => {
-    if(msg.body === '!everyone') {
-        const chat = await msg.getChat();
-        
-        let text = "";
-        let mentions = [];
-
-        for(let participant of chat.participants) {
-            const contact = await client.getContactById(participant.id._serialized);
-            
-            mentions.push(contact);
-            text += `@${participant.id.user} `;
-        }
-
-        chat.sendMessage(text, { mentions });
-    }
-});
